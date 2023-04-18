@@ -5,8 +5,8 @@ import json
 
 # preprocessing options
 binaryCardOccurency = True
-# Objectives can be: name, power, thoughness, types or manaCost
-featureSetObjective = ['power']
+# Objectives can be: power, thoughness, types or manaCost
+featureSetObjective = []
 
 
 print("loading data...")
@@ -106,4 +106,5 @@ relevant_data.columns = relevant_data.columns.str.replace("-", "")
 #         df[column] = df[column].map(lambda x: 0 if x == 0 else card_props[column[5:]][feature])
 #     return df
 
-relevant_data.to_csv(path_or_buf="/Data/KHM_draft_cleanv.csv", header=True)
+relevant_data.to_csv(
+    path_or_buf="../Data/KHM_draft_clean_binary.csv", header=True)
